@@ -1,3 +1,5 @@
+'use strict';
+
 const NAMES = [
   'Артём',
   'Мария',
@@ -33,9 +35,7 @@ const getRandomInteger = (a, b) => {
   return Math.floor(result);
 };
 
-const getRandomArrayElement = (elements) => {
-  return elements[getRandomInteger(0, elements.length - 1)];
-};
+const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
 let commentIdCounter = 1;
 
@@ -50,20 +50,18 @@ const createMessage = () => {
   let message = getRandomArrayElement(MESSAGES);
 
   if (sentenceCount === 2) {
-    message += ' ' + getRandomArrayElement(MESSAGES);
+    message += ` ${getRandomArrayElement(MESSAGES)}`;
   }
 
   return message;
 };
 
-const createComment = () => {
-  return {
-    id: generateCommentId(),
-    avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
-    message: createMessage(),
-    name: getRandomArrayElement(NAMES)
-  };
-};
+const createComment = () => ({
+  id: generateCommentId(),
+  avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
+  message: createMessage(),
+  name: getRandomArrayElement(NAMES)
+});
 
 const createPhoto = (index) => {
   const commentsCount = getRandomInteger(0, 30);
@@ -92,5 +90,4 @@ const generatePhotos = () => {
   return photos;
 };
 
-const mockPhotos = generatePhotos();
-console.log(mockPhotos);
+generatePhotos();

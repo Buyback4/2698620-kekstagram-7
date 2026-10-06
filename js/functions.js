@@ -1,4 +1,4 @@
-function checkStringLength(string, maxLength) {
+/*function checkStringLength(string, maxLength) {
   return string.length <= maxLength;
 }
 
@@ -13,3 +13,4 @@ function isPalindrome(string) {
 
   return normalizedString === reversedString;
 }
+*/
