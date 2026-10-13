@@ -17,3 +17,5 @@ const checkMeetingTime = (workStart, workEnd, meetingStart, meetingDuration) => 
 
   return meetingStartInMinutes >= workStartInMinutes && meetingEndInMinutes <= workEndInMinutes;
 };
+
+checkMeetingTime('08:00', '17:30', '14:00', 90);
